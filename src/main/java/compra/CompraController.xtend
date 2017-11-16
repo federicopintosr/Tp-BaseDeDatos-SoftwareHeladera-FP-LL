@@ -26,7 +26,7 @@ class CompraController {
 	def Result compras() {
 		try {
 			DriverManager.registerDriver(new org.gjt.mm.mysql.Driver())
-			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/heladera?useSSL=false", "root",
+			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3305/heladera?useSSL=false", "root",
 				"1234");
 			var Statement s = conexion.createStatement()
 			var ResultSet rs = s.executeQuery("select * from compra");
@@ -51,7 +51,7 @@ class CompraController {
 		try {
 			
 			DriverManager.registerDriver(new org.gjt.mm.mysql.Driver())
-			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/heladera?useSSL=false", "root",
+			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3305/heladera?useSSL=false", "root",
 				"1234");
 			var Statement s = conexion.createStatement()
 			var ResultSet rs = s.executeQuery("select * from compra where idcompra = '"+id+"'");
@@ -75,7 +75,7 @@ class CompraController {
 		try {
 			
 			DriverManager.registerDriver(new org.gjt.mm.mysql.Driver())
-			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/heladera?useSSL=false", "root",
+			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3305/heladera?useSSL=false", "root",
 				"1234");
 			var Statement s = conexion.createStatement()
 			var ResultSet rs = s.executeQuery("SELECT art.idarticulo, art.descripcion, art.categoria_idcategoria, art.unidad_idunidad, ahc.cantidad FROM articulo art left join articulo_has_compra ahc on art.idarticulo = ahc.articulo_idarticulo where ahc.compra_idcompra = '"+id+"'");
@@ -102,7 +102,7 @@ class CompraController {
 	def Result insertarCompra(){
 		try{
 		DriverManager.registerDriver(new org.gjt.mm.mysql.Driver())
-			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/heladera?useSSL=false", "root",
+			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3305/heladera?useSSL=false", "root",
 				"1234");
 			 var String fecha= new SimpleDateFormat("yyyy-MM-dd").format(Calendar.getInstance().getTime())
 			var Statement s = conexion.createStatement()
@@ -133,7 +133,7 @@ class CompraController {
 		try{
 			var ArticuloInsert articulo = body.fromJson(ArticuloInsert)
 			DriverManager.registerDriver(new org.gjt.mm.mysql.Driver())
-			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/heladera?useSSL=false", "root",
+			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3305/heladera?useSSL=false", "root",
 				"1234");
 			 
 			var Statement s = conexion.createStatement()
@@ -183,7 +183,7 @@ class CompraController {
 		try{
 			var Compra compra = body.fromJson(Compra)
 			DriverManager.registerDriver(new org.gjt.mm.mysql.Driver())
-			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/heladera?useSSL=false", "root",
+			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3305/heladera?useSSL=false", "root",
 				"1234");
 			 
 			var Statement s = conexion.createStatement()
@@ -206,7 +206,7 @@ class CompraController {
 			
 			var ArticuloCompra articuloCompra = body.fromJson(ArticuloCompra)
 			DriverManager.registerDriver(new org.gjt.mm.mysql.Driver())
-			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/heladera?useSSL=false", "root",
+			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3305/heladera?useSSL=false", "root",
 				"1234");
 			 
 			var Statement s = conexion.createStatement()
@@ -231,7 +231,7 @@ class CompraController {
 	def Result requeridos() {
 		try {
 			DriverManager.registerDriver(new org.gjt.mm.mysql.Driver())
-			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/heladera?useSSL=false", "root",
+			var Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3305/heladera?useSSL=false", "root",
 				"1234");
 			var Statement s = conexion.createStatement()
 			var ResultSet rs = s.executeQuery("SELECT r.articulo_idarticulo, a.descripcion, r.cantidad_aproximada FROM requerido  r left join articulo a on r.articulo_idarticulo=a.idarticulo;");
