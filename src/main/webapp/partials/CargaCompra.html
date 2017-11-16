@@ -1,0 +1,68 @@
+<div class="container-fluid d-inline-block">
+  
+  <div class="container-fluid" >
+      <br/>
+      <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group">
+             
+              <span class="input-group-addon">Descripcion</span>
+              <input type="text" ng-value="cargaCtrl.compra[0].descripcion" class="form-control" aria-label="Descripcion" ng-model="nuevadescripcion" ng-blur="cargaCtrl.cambioDescripcion(nuevadescripcion)">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="input-group">
+              <span class="input-group-addon">Fecha</span>
+            
+              <input type="text" ng-value="cargaCtrl.compra[0].fecha_hora" class="form-control" aria-label="Fecha" readonly="true">
+            </div>
+          </div>
+        </div>
+     
+     
+      <br/>
+      <div class="row">
+          <div class="col-lg-6">
+            <div class="input-group">
+             
+              <span class="input-group-addon">Articulo</span>
+              <input type="text" class="form-control" aria-label="Articulo" ng-model="cargaCtrl.articulo">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="input-group">
+              <span class="input-group-addon">Cantidad</span>
+              
+              <input type="text" class="form-control" aria-label="Cantidad" ng-model="cargaCtrl.cantidad">
+              <button type="button" class="btn btn-primary btn-lg" ng-click="cargaCtrl.insertarArticulo()"  >Insertar</button>
+            </div>
+          </div>
+        </div>
+      <br/>
+          <table class="table table-bordered ">
+              <thead>
+                <tr>
+                  <th scope="col">ID articulo</th>
+                  <th scope="col">Descripcion</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Accion</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="articulo in cargaCtrl.articulos">
+                  <th > {{articulo.idarticulo}} </th>
+                  <td class="color-negro">{{articulo.descripcion}}</td>
+                  <td class="color-negro">{{articulo.cantidad_compra}}</td>
+                  <td class="color-negro">
+                     
+                    <a ng-click="cargaCtrl.eliminar(articulo)" style="color: blue !important">Eliminar</a></td>
+                </tr>
+      
+              </tbody>
+          </table>
+          
+          
+          <button type="button" class="btn btn-primary btn-lg" ui-sref="Compras">Volver</button>
+        </div>
+
+</div>
