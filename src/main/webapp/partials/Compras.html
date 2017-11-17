@@ -1,6 +1,6 @@
 <div class="container-fluid" >
   
-    <table class="table table-bordered ">
+    <table class="table table-striped ">
         <thead>
           <tr>
             <th scope="col">ID</th>
@@ -11,7 +11,7 @@
         </thead>
         <tbody>
           <tr ng-repeat="Compra in comprasCtrl.compras">
-            <th > <a ui-sref="CargaCompra({id: Compra.idcompra})"  style="color: blue !important"> {{Compra.idcompra}} </a></th>
+            <th > <a ui-sref="CargaCompra({id: Compra.idcompra})"  style="color: rgb(161, 161, 201) !important"> {{Compra.idcompra}} </a></th>
             <td class="color-negro">{{Compra.descripcion}}</td>
             <td class="color-negro">{{Compra.fecha_hora}}</td>
             
